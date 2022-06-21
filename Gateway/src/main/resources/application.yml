@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: API
+          uri: lb://API
+          predicates:
+            - Path=/api/**
+        - id: API
+          uri: lb://API
+          predicates:
+            - Path=/login
+        - id: WEB
+          uri: lb://WEB
+          predicates:
+            - Path=/web/**
+        - id: WEB
+          uri: lb://WEB
+          predicates:
+            - Path=/

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>SEBBOT</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+
+    <style>
+        body{
+            background-color:rgba(66, 159, 247, 0.315);
+            text-align: center;
+        }
+
+        .title{
+            background-color: #3A3A3A;
+            color:white
+        }
+
+        a{
+            color: #c00889;
+            margin: 6%;
+        }
+
+        a:hover{
+            color:#ff0000;
+        }
+
+        .links{
+            margin-top: 1.5%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1> Welcome to SmartBot42 </h1>
+            <h3>Self Aware bot Developed by SebD</h3>
+        </div>
+    </header>
+
+    <div class="links"> 
+        <a href="/">home</a>
+        <a href="/web/register">register</a>
+    </div>
+<br>
+<div class="row" >
+
+  
+    <div class="col-8 offset-2" >
+        <h3>Login User</h3>
+
+        <form action="/web/login" method="post">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" name="username"  />
+            </div>
+
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password"  />
+            </div>
+
+            <input
+                    type="hidden"
+                    th:name="${_csrf.parameterName}"
+                    th:value="${_csrf.token}" />
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="SUBMIT" />
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
